@@ -6,7 +6,7 @@ from fastapi.responses import HTMLResponse
 from fastapi.templating import Jinja2Templates
 
 from app.config import load_config
-from app.scheduler import latest_data, start_scheduler
+from app.scheduler import alert_log, latest_data, start_scheduler
 
 load_dotenv()
 logging.basicConfig(level=logging.INFO)
@@ -30,6 +30,7 @@ def dashboard(request: Request):
         {
             "request": request,
             "assets": assets,
+            "alerts": alert_log[:30],
             "thresholds": config["thresholds"],
             "refresh_seconds": config["check_interval_minutes"] * 60,
         },
@@ -38,4 +39,8 @@ def dashboard(request: Request):
 
 @app.get("/api/status")
 def status():
-    return {"assets": list(latest_data.values()), "thresholds": config["thresholds"]}
+    return {
+        "assets": list(latest_data.values()),
+        "alerts": alert_log[:30],
+        "thresholds": config["thresholds"],
+    }

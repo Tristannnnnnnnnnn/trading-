@@ -16,6 +16,10 @@
     .error { color: #999; font-style: italic; }
     .platform { font-size: 0.8rem; color: #999; }
     .meta { color: #999; font-size: 0.85rem; }
+    h2 { font-size: 1.1rem; margin-top: 2rem; }
+    ul.alerts { list-style: none; padding: 0; }
+    ul.alerts li { padding: 0.5rem 0; border-bottom: 1px solid #333; font-size: 0.9rem; }
+    ul.alerts .time { color: #999; margin-right: 0.5rem; }
   </style>
 </head>
 <body>
@@ -36,5 +40,19 @@
       {% endfor %}
     </tbody>
   </table>
+
+  <h2>Dernières alertes</h2>
+  {% if alerts %}
+  <ul class="alerts">
+    {% for alert in alerts %}
+    <li>
+      <span class="time">{{ alert.sent_at.split('T')[0] }} {{ alert.sent_at.split('T')[1].split('.')[0] }}</span>
+      <span class="{{ alert.zone }}">{{ alert.message }}</span>
+    </li>
+    {% endfor %}
+  </ul>
+  {% else %}
+  <p class="meta">Aucune alerte envoyée pour l'instant.</p>
+  {% endif %}
 </body>
 </html>
