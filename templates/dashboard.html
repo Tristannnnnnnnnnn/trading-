@@ -1,0 +1,40 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta http-equiv="refresh" content="{{ refresh_seconds }}">
+  <title>Trading Signal Detector</title>
+  <style>
+    body { font-family: -apple-system, sans-serif; max-width: 720px; margin: 2rem auto; padding: 0 1rem; background: #111; color: #eee; }
+    h1 { font-size: 1.3rem; }
+    table { width: 100%; border-collapse: collapse; margin-top: 1rem; }
+    th, td { text-align: left; padding: 0.6rem; border-bottom: 1px solid #333; }
+    .oversold { color: #4ade80; font-weight: bold; }
+    .overbought { color: #f87171; font-weight: bold; }
+    .neutral { color: #eee; }
+    .error { color: #999; font-style: italic; }
+    .platform { font-size: 0.8rem; color: #999; }
+    .meta { color: #999; font-size: 0.85rem; }
+  </style>
+</head>
+<body>
+  <h1>RSI Watchlist</h1>
+  <p class="meta">Seuils: survente &lt; {{ thresholds.oversold }} · surachat &gt; {{ thresholds.overbought }} · rafraîchi toutes les {{ refresh_seconds // 60 }} min</p>
+  <table>
+    <thead>
+      <tr><th>Actif</th><th>Plateforme</th><th>RSI</th><th>Maj</th></tr>
+    </thead>
+    <tbody>
+      {% for asset in assets %}
+      <tr>
+        <td>{{ asset.display_name }}</td>
+        <td class="platform">{{ asset.platform }}</td>
+        <td class="{{ asset.status }}">{{ asset.rsi if asset.rsi is not none else '—' }}</td>
+        <td class="meta">{{ asset.updated_at.split('T')[1].split('.')[0] if asset.updated_at else '' }}</td>
+      </tr>
+      {% endfor %}
+    </tbody>
+  </table>
+</body>
+</html>

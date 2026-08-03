@@ -1,0 +1,26 @@
+{
+  "rsi_period": 14,
+  "default_interval": "1d",
+  "check_interval_minutes": 15,
+  "thresholds": {
+    "oversold": 30,
+    "overbought": 70
+  },
+  "assets": [
+    {
+      "display_name": "Apple",
+      "yahoo_symbol": "AAPL",
+      "platform": "eToro"
+    },
+    {
+      "display_name": "EUR/USD",
+      "yahoo_symbol": "EURUSD=X",
+      "platform": "cTrader"
+    },
+    {
+      "display_name": "Gold",
+      "yahoo_symbol": "GC=F",
+      "platform": "cTrader"
+    }
+  ]
+}
