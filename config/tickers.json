@@ -3,8 +3,8 @@
   "default_interval": "1d",
   "check_interval_minutes": 15,
   "thresholds": {
-    "oversold": 30,
-    "overbought": 70
+    "oversold": 25,
+    "overbought": 75
   },
   "assets": [
     {

@@ -25,12 +25,15 @@
 <body>
   <h1>RSI Watchlist</h1>
   <p class="meta">Seuils: survente &lt; {{ thresholds.oversold }} · surachat &gt; {{ thresholds.overbought }} · rafraîchi toutes les {{ refresh_seconds // 60 }} min</p>
+
+  <h2>🔔 Zone signal (RSI &lt; {{ thresholds.oversold }} ou &gt; {{ thresholds.overbought }})</h2>
+  {% if signal_assets %}
   <table>
     <thead>
       <tr><th>Actif</th><th>Plateforme</th><th>RSI</th><th>Maj</th></tr>
     </thead>
     <tbody>
-      {% for asset in assets %}
+      {% for asset in signal_assets %}
       <tr>
         <td>{{ asset.display_name }}</td>
         <td class="platform">{{ asset.platform }}</td>
@@ -40,6 +43,30 @@
       {% endfor %}
     </tbody>
   </table>
+  {% else %}
+  <p class="meta">Aucun actif en zone signal pour l'instant.</p>
+  {% endif %}
+
+  <h2>Zone neutre ({{ thresholds.oversold }}–{{ thresholds.overbought }})</h2>
+  {% if neutral_assets %}
+  <table>
+    <thead>
+      <tr><th>Actif</th><th>Plateforme</th><th>RSI</th><th>Maj</th></tr>
+    </thead>
+    <tbody>
+      {% for asset in neutral_assets %}
+      <tr>
+        <td>{{ asset.display_name }}</td>
+        <td class="platform">{{ asset.platform }}</td>
+        <td class="{{ asset.status }}">{{ asset.rsi if asset.rsi is not none else '—' }}</td>
+        <td class="meta">{{ asset.updated_at.split('T')[1].split('.')[0] if asset.updated_at else '' }}</td>
+      </tr>
+      {% endfor %}
+    </tbody>
+  </table>
+  {% else %}
+  <p class="meta">Aucun actif en zone neutre pour l'instant.</p>
+  {% endif %}
 
   <h2>Dernières alertes</h2>
   {% if alerts %}

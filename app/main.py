@@ -25,11 +25,14 @@ def on_startup() -> None:
 @app.get("/", response_class=HTMLResponse)
 def dashboard(request: Request):
     assets = sorted(latest_data.values(), key=lambda a: a["display_name"])
+    signal_assets = [a for a in assets if a["status"] in ("oversold", "overbought")]
+    neutral_assets = [a for a in assets if a["status"] not in ("oversold", "overbought")]
     return templates.TemplateResponse(
         "dashboard.html",
         {
             "request": request,
-            "assets": assets,
+            "signal_assets": signal_assets,
+            "neutral_assets": neutral_assets,
             "alerts": alert_log[:30],
             "thresholds": config["thresholds"],
             "refresh_seconds": config["check_interval_minutes"] * 60,
