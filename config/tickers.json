@@ -7,20 +7,48 @@
     "overbought": 75
   },
   "assets": [
-    {
-      "display_name": "Apple",
-      "yahoo_symbol": "AAPL",
-      "platform": "eToro"
-    },
-    {
-      "display_name": "EUR/USD",
-      "yahoo_symbol": "EURUSD=X",
-      "platform": "cTrader"
-    },
-    {
-      "display_name": "Gold",
-      "yahoo_symbol": "GC=F",
-      "platform": "cTrader"
-    }
+    { "display_name": "Old Dominion Freight Line", "yahoo_symbol": "ODFL", "platform": "eToro" },
+    { "display_name": "NetEase", "yahoo_symbol": "NTES", "platform": "eToro" },
+    { "display_name": "ServiceNow", "yahoo_symbol": "NOW", "platform": "eToro" },
+    { "display_name": "MPLX LP", "yahoo_symbol": "MPLX", "platform": "eToro" },
+    { "display_name": "Altria Group", "yahoo_symbol": "MO", "platform": "eToro" },
+    { "display_name": "ManpowerGroup", "yahoo_symbol": "MAN", "platform": "eToro" },
+    { "display_name": "Alliant Energy", "yahoo_symbol": "LNT", "platform": "eToro" },
+    { "display_name": "L3Harris", "yahoo_symbol": "LHX", "platform": "eToro" },
+    { "display_name": "Lincoln Electric Holdings", "yahoo_symbol": "LECO", "platform": "eToro" },
+    { "display_name": "ICICI Bank ADR", "yahoo_symbol": "IBN", "platform": "eToro" },
+    { "display_name": "General Mills", "yahoo_symbol": "GIS", "platform": "eToro" },
+    { "display_name": "Gold Fields ADR", "yahoo_symbol": "GFI", "platform": "eToro" },
+    { "display_name": "Gen Digital", "yahoo_symbol": "GEN", "platform": "eToro" },
+    { "display_name": "GATX Corporation", "yahoo_symbol": "GATX", "platform": "eToro" },
+    { "display_name": "Enterprise Products Partners", "yahoo_symbol": "EPD", "platform": "eToro" },
+    { "display_name": "EnerSys", "yahoo_symbol": "ENS", "platform": "eToro" },
+    { "display_name": "Dow Inc", "yahoo_symbol": "DOW", "platform": "eToro" },
+    { "display_name": "CVS Health", "yahoo_symbol": "CVS", "platform": "eToro" },
+    { "display_name": "Carvana", "yahoo_symbol": "CVNA", "platform": "eToro" },
+    { "display_name": "Cintas Corp", "yahoo_symbol": "CTAS", "platform": "eToro" },
+    { "display_name": "Cronos Group", "yahoo_symbol": "CRON", "platform": "eToro" },
+    { "display_name": "Salesforce", "yahoo_symbol": "CRM", "platform": "eToro" },
+    { "display_name": "CME Group", "yahoo_symbol": "CME", "platform": "eToro" },
+    { "display_name": "C.H. Robinson Worldwide", "yahoo_symbol": "CHRW", "platform": "eToro" },
+    { "display_name": "Celanese Corp", "yahoo_symbol": "CE", "platform": "eToro" },
+    { "display_name": "Banco Santander Chile ADR", "yahoo_symbol": "BSAC", "platform": "eToro" },
+    { "display_name": "BP", "yahoo_symbol": "BP.L", "platform": "eToro" },
+    { "display_name": "BioMarin Pharmaceutical", "yahoo_symbol": "BMRN", "platform": "eToro" },
+    { "display_name": "Bloomin' Brands", "yahoo_symbol": "BLMN", "platform": "eToro" },
+    { "display_name": "Baker Hughes", "yahoo_symbol": "BKR", "platform": "eToro" },
+    { "display_name": "Bunge Global", "yahoo_symbol": "BG", "platform": "eToro" },
+    { "display_name": "Booz Allen Hamilton", "yahoo_symbol": "BAH", "platform": "eToro" },
+    { "display_name": "Boeing", "yahoo_symbol": "BA", "platform": "eToro" },
+    { "display_name": "Antero Resources", "yahoo_symbol": "AR", "platform": "eToro" },
+    { "display_name": "Aptiv PLC", "yahoo_symbol": "APTV", "platform": "eToro" },
+    { "display_name": "Arista Networks", "yahoo_symbol": "ANET", "platform": "eToro" },
+    { "display_name": "Akamai Technologies", "yahoo_symbol": "AKAM", "platform": "eToro" },
+    { "display_name": "AerCap Holdings", "yahoo_symbol": "AER", "platform": "eToro" },
+    { "display_name": "Autodesk", "yahoo_symbol": "ADSK", "platform": "eToro" },
+    { "display_name": "Analog Devices", "yahoo_symbol": "ADI", "platform": "eToro" },
+    { "display_name": "Adobe Systems", "yahoo_symbol": "ADBE", "platform": "eToro" },
+    { "display_name": "Accenture Plc", "yahoo_symbol": "ACN", "platform": "eToro" },
+    { "display_name": "American Airlines Group", "yahoo_symbol": "AAL", "platform": "eToro" }
   ]
 }
