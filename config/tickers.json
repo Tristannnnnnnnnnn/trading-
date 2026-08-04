@@ -1,7 +1,7 @@
 {
   "rsi_period": 14,
   "default_interval": "1d",
-  "check_interval_minutes": 15,
+  "check_interval_minutes": 5,
   "thresholds": {
     "oversold": 25,
     "overbought": 75
