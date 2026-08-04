@@ -1,5 +1,6 @@
 import json
 import logging
+import time
 from datetime import datetime, timezone
 from pathlib import Path
 
@@ -103,7 +104,9 @@ def check_asset(asset: dict, rsi_period: int, default_interval: str, thresholds:
 def run_check_cycle(config: dict) -> None:
     state = _load_state()
     log = _load_alert_log()
-    for asset in config["assets"]:
+    for i, asset in enumerate(config["assets"]):
+        if i > 0:
+            time.sleep(1)  # avoid tripping Yahoo Finance's rate limiting on rapid successive requests
         check_asset(
             asset,
             rsi_period=config["rsi_period"],
