@@ -7,6 +7,8 @@
     "overbought": 75
   },
   "assets": [
+    { "display_name": "Shake Shack", "yahoo_symbol": "SHAK", "platform": "eToro" },
+    { "display_name": "Range Resources", "yahoo_symbol": "RRC", "platform": "eToro" },
     { "display_name": "Old Dominion Freight Line", "yahoo_symbol": "ODFL", "platform": "eToro" },
     { "display_name": "NetEase", "yahoo_symbol": "NTES", "platform": "eToro" },
     { "display_name": "ServiceNow", "yahoo_symbol": "NOW", "platform": "eToro" },
