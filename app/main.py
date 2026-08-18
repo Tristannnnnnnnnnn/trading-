@@ -47,3 +47,11 @@ def status():
         "alerts": alert_log[:30],
         "thresholds": config["thresholds"],
     }
+
+
+@app.get("/ping")
+def ping():
+    """Tiny endpoint for external keep-alive pingers (cron-job.org, UptimeRobot...).
+    Kept minimal on purpose: pinging "/" makes some pingers choke on the full
+    dashboard HTML ("output too large") and mark the check as failed."""
+    return {"status": "ok"}
