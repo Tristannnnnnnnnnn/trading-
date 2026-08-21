@@ -4,3 +4,4 @@ venv/
 .venv/
 .env
 data/alert_state.json
+data/alert_log.json
